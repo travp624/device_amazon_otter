@@ -153,8 +153,7 @@ rm -rf $REPACK/ota/recovery
 #MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $REPACK/ota/system/build.prop`
 VERSION=`cat "vendor/BlackICE/configs/common_versions.mk" | grep ro.blackice.version | head -1 | cut -f2 -d '=' | cut -f3 -d '_'`
 MODVERSION="$TARGET_PRODUCT"_"$VERSION"
-REALDATE=`date +%F-%H_%M`
-OUTFILE=$OUT/$MODVERSION-$REALDATE.zip
+OUTFILE=$OUT/$MODVERSION.zip
 
 # Pack it up and sign
 printf "Zipping package..."
